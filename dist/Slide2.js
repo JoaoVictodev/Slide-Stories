@@ -7,8 +7,8 @@ export default class Slide {
     index;
     slide;
     timeout;
-    paused;
     pausedTimeout;
+    paused;
     constructor(container, slides, controls, time = 5000) {
         this.container = container;
         this.slides = slides;
@@ -48,11 +48,14 @@ export default class Slide {
         this.show(next);
     }
     pause() {
+        console.log("pause");
         this.pausedTimeout = new Timeout(() => {
             this.paused = true;
         }, 300);
+        this.paused = true;
     }
     continue() {
+        console.log("continue");
         this.pausedTimeout?.clear();
         if (this.paused) {
             this.paused = false;
@@ -63,17 +66,17 @@ export default class Slide {
         const prevButton = document.createElement("button");
         const nextButton = document.createElement("button");
         prevButton.innerText = "Slide Anterior";
-        nextButton.innerText = "Proximo slide";
+        nextButton.innerText = "Próximo Slide";
         this.controls.appendChild(prevButton);
         this.controls.appendChild(nextButton);
         this.controls.addEventListener("pointerdown", () => this.pause());
         this.controls.addEventListener("pointerup", () => this.continue());
-        nextButton.addEventListener("pointerup", () => this.next());
         prevButton.addEventListener("pointerup", () => this.prev());
+        nextButton.addEventListener("pointerup", () => this.next());
     }
     init() {
         this.addControls();
         this.show(this.index);
     }
 }
-//# sourceMappingURL=slide.js.map
+//# sourceMappingURL=Slide2.js.map

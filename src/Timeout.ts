@@ -8,4 +8,11 @@ export default class Timeout {
   clear() {
     clearTimeout(this.id);
   }
+  pause(){
+
+  }
+
+  continue(){
+    
+  }
 }
