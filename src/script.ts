@@ -12,5 +12,5 @@ if (container && elements && controls && elements.children.length > 0) {
     3000
   );
 
-  slide.show(3)
+  slide.show(0)
 }
