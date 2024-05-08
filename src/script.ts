@@ -11,6 +11,4 @@ if (container && elements && controls && elements.children.length > 0) {
     controls,
     3000
   );
-
-  slide.show(0)
 }
